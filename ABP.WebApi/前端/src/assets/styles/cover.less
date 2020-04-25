@@ -1,0 +1,86 @@
+// ui库覆盖样式
+@import "./var.less";
+
+// 自定义滚动条的样式
+::-webkit-scrollbar-track-piece{
+	background-color:@layout-body-background;
+	-webkit-border-radius:0;
+}
+::-webkit-scrollbar{
+	width:8px;
+	height:8px;
+}
+::-webkit-scrollbar-thumb{
+	height:50px;
+	background-color:@text-color-secondary;
+	-webkit-border-radius:5px;
+	outline:1px solid @layout-body-background;
+	outline-offset:-1px;
+	border: 1px solid @layout-body-background;
+}
+::-webkit-scrollbar-thumb:hover{
+	height:50px;
+	background-color:@text-color;
+	-webkit-border-radius:5px;
+}
+
+.artiely-menu
+  .ant-menu-inline-collapsed
+  > .ant-menu-submenu
+  > .ant-menu-submenu-title {
+  padding: 0 !important;
+  text-align: center;
+  .anticon {
+    font-size: 24px !important;
+  }
+}
+.ant-menu-item .anticon,
+.ant-menu-submenu-title .anticon {
+  font-size: 18px !important;
+  vertical-align: -0.15em !important;
+}
+
+#app {
+  .ant-layout-header:not(.layout2-header) {
+    background: @header-bg;
+  }
+  .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+    background: @nav-tab-bg;
+    color: @text-color-secondary;
+  }
+  .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
+    background: @nav-tab-active-bg;
+    color: @nav-tab-active-color;
+  }
+  .number {
+    color: @number-color;
+  }
+  .ant-input-affix-wrapper .ant-input-prefix .anticon {
+    // color: @text-color-secondary;
+  }
+  .ivu-divider-horizontal.ivu-divider-with-text-center,
+  .ivu-divider-horizontal.ivu-divider-with-text-left,
+  .ivu-divider-horizontal.ivu-divider-with-text-right {
+    color: @text-color-secondary;
+  }
+  .ant-alert-message{
+    color: @text-color!important;
+  }
+  .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left{
+    border: none
+  }
+  .layout1-header{
+    background: @header-bg;
+  }
+
+}
+#components-layout-demo-side{
+  // .ant-layout-sider{
+  //   overflow-y:hidden 
+  // }
+  .ant-layout-sider-children{
+    overflow-y:auto;
+    overflow-x: hidden;
+    // margin-right:-25px;
+  }
+}

@@ -1,0 +1,87 @@
+﻿@page
+@model AuditLogView.Logs.Pages.Page1Model
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AuditLogs</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+    </script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+            crossorigin="anonymous"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+    </script>
+</head>
+<body>
+ <table class="table">
+     <thead>
+         <tr>
+             <th>
+                 @Html.DisplayNameFor(model => model.auditLogDtos[0].BrowserInfo)
+             </th>
+             <th>
+                 @Html.DisplayNameFor(model => model.auditLogDtos[0].ClientName)
+             </th>
+             <th>
+                 @Html.DisplayNameFor(model => model.auditLogDtos[0].ClientIpAddress)
+             </th>
+             <th>
+                 @Html.DisplayNameFor(model => model.auditLogDtos[0].Exception)
+             </th>
+             <th>
+                 @Html.DisplayNameFor(model => model.auditLogDtos[0].ExecutionDuration)
+             </th>
+             <th>
+                 @Html.DisplayNameFor(model => model.auditLogDtos[0].ExecutionTime)
+             </th>
+             <th>
+                 @Html.DisplayNameFor(model => model.auditLogDtos[0].Parameters)
+             </th>
+         </tr>
+     </thead>
+     <tbody>
+        @foreach (var item in Model.auditLogDtos)
+        {
+         <tr>
+             <td>
+                 @Html.DisplayFor(modelitem => item.BrowserInfo)
+             </td>
+             <td>
+                 @Html.DisplayFor(modelitem => item.ClientName)
+             </td>
+             <td>
+                 @Html.DisplayFor(modelitem => item.ClientIpAddress)
+             </td>
+             <td>
+                 @Html.DisplayFor(modelitem => item.Exception)
+             </td>
+             <td>
+                 @Html.DisplayFor(modelitem => item.ExecutionDuration)
+             </td>
+             <td>
+                 @Html.DisplayFor(modelitem => item.ExecutionTime)
+             </td>
+             <td>
+                 @Html.DisplayFor(modelitem => item.Parameters)
+             </td>
+         </tr>
+        }
+     </tbody>
+ </table>
+</body>
+</html>

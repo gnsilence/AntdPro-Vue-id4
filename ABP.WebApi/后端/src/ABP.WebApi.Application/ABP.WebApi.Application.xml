@@ -1,0 +1,889 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ABP.WebApi.Application</name>
+    </assembly>
+    <members>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.AddIdsLog(System.String,System.String)">
+            <summary>
+            记录id的日志
+            </summary>
+            <param name="optype"></param>
+            <param name="logtxt"></param>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.ModifyPassword(ABP.WebApi.DTO.AccountModifyPasswordRequestDto)">
+            <summary>
+            个人修改登录密码
+            </summary>
+            <param name="dto">修改登录密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.ModifyEmail(ABP.WebApi.DTO.AccountModifyEmailRequestDto)">
+            <summary>
+            个人修改邮箱地址
+            </summary>
+            <param name="dto">邮箱地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.ModifyTelephone(ABP.WebApi.DTO.AccountModifyTelephoneRequestDto)">
+            <summary>
+            个人修改电话号码
+            </summary>
+            <param name="dto">电话号码</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.ModifyNameOrAvatar(ABP.WebApi.DTO.AccountModifyNameOrAvatarRequestDto)">
+            <summary>
+            个人修改昵称或者头像
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.Info">
+            <summary>
+            登录获取用户信息和权限信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.Create(ABP.WebApi.DTO.AccountCreateRequestDto)">
+            <summary>
+            创建账号
+            </summary>
+            <param name="dto">账号对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.Delete(System.Int32)">
+            <summary>
+            删除账号
+            </summary>
+            <param name="id">账号标识</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.Midify(ASF.Application.DTO.AccountModifyInfoRequestDto)">
+            <summary>
+            修改账户信息
+            </summary>
+            <param name="dto">账户信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.MidifyStatus(ABP.WebApi.DTO.AccountModifyStatusRequestDto)">
+            <summary>
+            修改账号状态
+            </summary>
+            <param name="dto">修改状态请求</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.ResetPassword(ABP.WebApi.DTO.AccountResetPasswordRequestDto)">
+            <summary>
+            设置登录密码
+            </summary>
+            <param name="dto">设置登录密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.GetList(ASF.Application.DTO.AccountListPagedRequestDto)">
+            <summary>
+            获取账户集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AccountService.AccountAppService.GetDetails(System.Int32)">
+            <summary>
+            获取账号详细信息
+            </summary>
+            <param name="id">账号ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:ABP.WebApi.Api.Auditervice.AuditAppService">
+            <summary>
+            审计日志
+            </summary>
+        </member>
+        <member name="M:ABP.WebApi.Api.Auditervice.AuditAppService.GetAuditLogsPagelist(ABP.WebApi.Extensions.PagedSortedRequestInput{ABP.WebApi.Api.Auditservice.Dtos.SearchDto})">
+            <summary>
+            获取审计日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Auditervice.AuditAppService.DeleteLogs(ABP.WebApi.Api.Auditservice.Dtos.SearchDto)">
+            <summary>
+            删除指定日期的日志
+            </summary>
+            <param name="begintime"></param>
+            <param name="endTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Auditervice.AuditAppService.GetAuditLogAsync(System.Int64)">
+            <summary>
+            获取日志详情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ABP.WebApi.Api.Auditservice.Dtos.SearchDto">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Auditservice.Dtos.SearchDto.BeginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Auditservice.Dtos.SearchDto.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Auditservice.Dtos.SearchDto.HasException">
+            <summary>
+            只看异常
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Auditservice.Dtos.SearchDto.Account">
+            <summary>
+            账户
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Auditservice.Dtos.SearchDto.IPAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Auditservice.Dtos.SearchDto.MethodName">
+            <summary>
+            方法名称
+            </summary>
+        </member>
+        <member name="M:ABP.WebApi.Api.AuthoriseService.AuthoriseAppService.Login(ABP.WebApi.DTO.AuthoriseByUsernameRequestDto)">
+            <summary>
+            账户登录
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.AuthoriseService.AuthoriseAppService.Logout">
+            <summary>
+            退出登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Jobs.BackJobAppService.AddBackGroundJob(Hangfire.HttpJob.Server.HttpJobItem)">
+            <summary>
+            添加一个队列任务,立即执行
+            </summary>
+            <param name="httpJob">httpjob</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Jobs.BackJobAppService.AddOrUpdateRecurringJob(Hangfire.HttpJob.Server.HttpJobItem)">
+            <summary>
+            添加一个周期任务
+            </summary>
+            <param name="httpJob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Jobs.BackJobAppService.DeleteJob(System.String)">
+            <summary>
+            删除周期任务
+            </summary>
+            <param name="jobname">任务名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Jobs.BackJobAppService.TriggerRecurringJob(System.String)">
+            <summary>
+            手动触发一个定时任务,立即执行
+            </summary>
+            <param name="jobname">任务名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Jobs.BackJobAppService.AddScheduleJob(Hangfire.HttpJob.Server.HttpJobItem)">
+            <summary>
+            添加一个延迟任务
+            </summary>
+            <param name="httpJob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Jobs.BackJobAppService.GetJobItems(ABP.WebApi.Api.Jobs.Dtos.JobListPagedRequestDto)">
+            <summary>
+            获取所有定时任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Jobs.BackJobAppService.GetMonitoringApi">
+            <summary>
+            获取任务状态信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Jobs.BackJobAppService.GetHttpJobItem(System.String)">
+            <summary>
+            根据名称获取任务
+            </summary>
+            <param name="jobname">任务名称</param>
+            <returns></returns>
+        </member>
+        <member name="P:ABP.WebApi.Api.Jobs.Dtos.MonitoringApi.DeletedJobs">
+            <summary>
+            已经删除的
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Jobs.Dtos.MonitoringApi.EnqueuedCount">
+            <summary>
+            入队的作业
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Jobs.Dtos.MonitoringApi.FailedCount">
+            <summary>
+            失败数
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Jobs.Dtos.MonitoringApi.ProcessingCount">
+            <summary>
+            执行中的作业
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Jobs.Dtos.MonitoringApi.ScheduledCount">
+            <summary>
+            等待中的作业
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Jobs.Dtos.MonitoringApi.SucceededListCount">
+            <summary>
+            执行成功的作业
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Api.Jobs.Dtos.MonitoringApi.Queues">
+            <summary>
+            队列数
+            </summary>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.ActionAppService.Create(ASF.Application.DTO.PermissionActionCreateRequestDto)">
+            <summary>
+            创建功能权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.ActionAppService.Modify(ASF.Application.DTO.PermissionActionModifyRequestDto)">
+            <summary>
+            修改功能权限
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.ActionAppService.GetList(ASF.Application.DTO.PermissionListRequestDto)">
+            <summary>
+            获取功能权限集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.ActionAppService.GetDetails(System.String)">
+            <summary>
+            根据ID获取功能权限详情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.MenuAppService.Create(ASF.Application.DTO.PermissionMenuCreateRequestDto)">
+            <summary>
+            创建菜单权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.MenuAppService.Modify(ASF.Application.DTO.PermissionMenuModifyRequestDto)">
+            <summary>
+            修改菜单权限
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.MenuAppService.GetList(ASF.Application.DTO.PermissionListRequestDto)">
+            <summary>
+            获取菜单权限集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.MenuAppService.GetDetails(System.String)">
+            <summary>
+            根据ID获取菜单权限详情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.MenuAppService.GetAllList">
+            <summary>
+            获取所有菜单权限集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.MenuAppService.Export(ASF.Application.DTO.PermissionMenuExportRequestDto)">
+            <summary>
+            导出权限菜单
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.MenuAppService.Import(ASF.Application.DTO.PermissionMenuExportRequestDto)">
+            <summary>
+            导入
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.OpenApiAppService.Create(ASF.Application.DTO.PermissionOpenApiCreateRequestDto)">
+            <summary>
+            创建开放API权限
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.OpenApiAppService.Modify(ASF.Application.DTO.PermissionOpenApiModifyRequestDto)">
+            <summary>
+            修改开放API权限
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.OpenApiAppService.GetDetails(System.String)">
+            <summary>
+            根据ID获取开放API权限详情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.OpenApiAppService.GetList(ASF.Application.DTO.PermissionListRequestDto)">
+            <summary>
+            获取开放API权限集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.OpenApiAppService.Import(ASF.Application.DTO.PermissionOpenApiRequestDto)">
+            <summary>
+            导入
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.PermissionAppService.ModifySort(ASF.Application.DTO.PermissionModifySortRequestDto)">
+            <summary>
+            修改权限排序
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.Permission.PermissionAppService.Delete(System.String)">
+            <summary>
+            删除权限
+            </summary>
+            <param name="id">权限标识</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.RoleService.RoleAppService.Create(ASF.Application.DTO.RoleCreateRequestDto)">
+            <summary>
+            创建角色
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.RoleService.RoleAppService.Delete(System.Int32)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="id">角色标识</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.RoleService.RoleAppService.Modify(ASF.Application.DTO.RoleModifyRequestDto)">
+            <summary>
+            修改角色
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.RoleService.RoleAppService.ModifyStatus(ASF.Application.DTO.RoleModifyStatusRequestDto)">
+            <summary>
+            修改角色状态
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.RoleService.RoleAppService.GetListAll">
+            <summary>
+            获取所有角色基本信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.RoleService.RoleAppService.GetList(ASF.Application.DTO.RoleListPagedRequestDto)">
+            <summary>
+            获取角色集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.RoleService.RoleAppService.IfExistsRole(System.String)">
+            <summary>
+            检查是否已经添加角色
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Api.RoleService.RoleAppService.GetDetails(System.Int32)">
+            <summary>
+            获取角色详情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ABP.WebApi.AppConsts.DefaultPassPhrase">
+            <summary>
+            Default pass phrase for SimpleStringCipher decrypt/encrypt operations
+            </summary>
+        </member>
+        <member name="F:ABP.WebApi.AppConsts.SuperAdminRole">
+            <summary>
+            超级管理员权限
+            </summary>
+        </member>
+        <member name="T:ABP.WebApi.Authorization.AuthorizationInterceptor">
+            <summary>
+            权限拦截
+            </summary>
+        </member>
+        <member name="M:ABP.WebApi.Authorization.AuthorizationInterceptorRegistrar.ShouldIntercept(System.Type)">
+            <summary>
+            需要拦截的特性类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.Authorization.AuthorizationInterceptorRegistrar.SelfOrMethodsDefinesAttribute``1(System.Type)">
+            <summary>
+            判断是否使用某个特性
+            </summary>
+            <typeparam name="TAttr"></typeparam>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ABP.WebApi.Authorization.IAuthorizeAttribute.Permissions">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="P:ABP.WebApi.Authorization.NullPermissionChecker.Instance">
+            <summary>
+            Singleton instance.
+            </summary>
+        </member>
+        <member name="M:ABP.WebApi.GrpcService.ITestService.GetTestData">
+            <summary>
+            grpc服务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ABP.WebApi.Application.Interceptors.InternalAsyncHelper">
+            <summary>
+            拦截异步方法使用
+            </summary>
+        </member>
+        <member name="T:ABP.WebApi.Application.Interceptors.ServiceAsyncInterceptor">
+            <summary>
+            拦截异步方法(由于通过接口调用所以拦截的方法必须为虚方法)
+            </summary>
+        </member>
+        <member name="T:ABP.WebApi.Application.Interceptors.ServiceInterceptor">
+            <summary>
+            拦截普通方法(由于通过接口调用所以被拦截的方法必须为虚方法)
+            </summary>
+        </member>
+        <member name="T:ABP.WebApi.Net.MimeTypes.MimeTypeNames">
+            <summary>
+            Common mime types. 
+            </summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXJavascript">
+            <summary>Used to denote the encoding necessary for files containing JavaScript source code. The alternative MIME type for this file type is text/javascript.</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioL24">
+            <summary>24bit Linear PCM audio at 8-48kHz, 1-N channels; Defined in RFC 3190</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXShockwaveFlash">
+            <summary>Adobe Flash files for example with the extension .swf</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationOctetStream">
+            <summary>Arbitrary binary data.[5] Generally speaking this type identifies files that are not associated with a specific application. Contrary to past assumptions by software packages such as Apache this is not a type that should be applied to unknown files. In such a case, a server or application should not indicate a content type, as it may be incorrect, but rather, should omit the type in order to allow the recipient to guess the type.[6]</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationAtomXml">
+            <summary>Atom feeds</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.TextCss">
+            <summary>Cascading Style Sheets; Defined in RFC 2318</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.TextCmd">
+            <summary>commands; subtype resident in Gecko browsers like Firefox 3.5</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.TextCsv">
+            <summary>Comma-separated values; Defined in RFC 4180</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXDeb">
+            <summary>deb (file format), a software package format used by the Debian project</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.MultipartEncrypted">
+            <summary>Defined in RFC 1847</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.MultipartSigned">
+            <summary>Defined in RFC 1847</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.MessageHttp">
+            <summary>Defined in RFC 2616</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ModelExample">
+            <summary>Defined in RFC 4735</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXDvi">
+            <summary>device-independent document in DVI format</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXmlDtd">
+            <summary>DTD files; Defined by RFC 3023</summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationJavascript" -->
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationEcmascript">
+            <summary>ECMAScript/JavaScript; Defined in RFC 4329 (equivalent to application/javascript but with stricter processing rules)</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationEdifact">
+            <summary>EDI EDIFACT data; Defined in RFC 1767</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationEdiX12">
+            <summary>EDI X12 data; Defined in RFC 1767</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.MessagePartial">
+            <summary>Email; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.MessageRfc822">
+            <summary>Email; EML files, MIME files, MHT files, MHTML files; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.TextXml">
+            <summary>Extensible Markup Language; Defined in RFC 3023</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.VideoXFlv">
+            <summary>Flash video (FLV files)</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ImageGif">
+            <summary>GIF image; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.TextXGwtRpc">
+            <summary>GoogleWebToolkit data</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXGzip">
+            <summary>Gzip</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.TextHtml">
+            <summary>HTML; Defined in RFC 2854</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ImageVndMicrosoftIcon">
+            <summary>ICO image; Registered[9]</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ModelIges">
+            <summary>IGS files, IGES files; Defined in RFC 2077</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.MessageImdnXml">
+            <summary>IMDN Instant Message Disposition Notification; Defined in RFC 5438</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationJson">
+            <summary>JavaScript Object Notation JSON; Defined in RFC 4627</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationJsonPatch">
+            <summary>JavaScript Object Notation (JSON) Patch; Defined in RFC 6902</summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.TextJavascript" -->
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ImagePjpeg">
+            <summary>JPEG JFIF image; Associated with Internet Explorer; Listed in ms775147(v=vs.85) - Progressive JPEG, initiated before global browser support for progressive JPEGs (Microsoft and Firefox).</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ImageJpeg">
+            <summary>JPEG JFIF image; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.TextXJqueryTmpl">
+            <summary>jQuery template data</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndGoogleEarthKmlXml">
+            <summary>KML files (e.g. for Google Earth)</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXLatex">
+            <summary>LaTeX files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.VideoXMatroska">
+            <summary>Matroska open media format</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndOpenxmlformatsOfficedocumentSpreadsheetmlSheet">
+            <summary>Microsoft Excel 2007 files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndMsExcel">
+            <summary>Microsoft Excel files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndOpenxmlformatsOfficedocumentPresentationmlPresentation">
+            <summary>Microsoft Powerpoint 2007 files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndMsPowerpoint">
+            <summary>Microsoft Powerpoint files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndOpenxmlformatsOfficedocumentWordprocessingmlDocument">
+            <summary>Microsoft Word 2007 files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationMsword">
+            <summary>Microsoft Word files[15]</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.MultipartAlternative">
+            <summary>MIME Email; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.MultipartMixed">
+            <summary>MIME Email; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.MultipartRelated">
+            <summary>MIME Email; Defined in RFC 2387 and used by MHTML (HTML mail)</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.MultipartFormData">
+            <summary>MIME Webform; Defined in RFC 2388</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndMozillaXulXml">
+            <summary>Mozilla XUL files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioMpeg">
+            <summary>MP3 or other MPEG audio; Defined in RFC 3003</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioMp4">
+            <summary>MP4 audio</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.VideoMp4">
+            <summary>MP4 video; Defined in RFC 4337</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.VideoMpeg">
+            <summary>MPEG-1 video with multiplexed audio; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ModelMesh">
+            <summary>MSH files, MESH files; Defined in RFC 2077, SILO files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioBasic">
+            <summary>mulaw audio at 8 kHz, 1 channel; Defined in RFC 2046</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.VideoOgg">
+            <summary>Ogg Theora or other video (with audio); Defined in RFC 5334</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioOgg">
+            <summary>Ogg Vorbis, Speex, Flac and other audio; Defined in RFC 5334</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationOgg">
+            <summary>Ogg, a multimedia bitstream container format; Defined in RFC 5334</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXopXml">
+            <summary>OP</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentGraphics">
+            <summary>OpenDocument Graphics; Registered[14]</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentPresentation">
+            <summary>OpenDocument Presentation; Registered[13]</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentSpreadsheet">
+            <summary>OpenDocument Spreadsheet; Registered[12]</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentText">
+            <summary>OpenDocument Text; Registered[11]</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs12">
+            <summary>p12 files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Certificates">
+            <summary>p7b and spc files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Mime">
+            <summary>p7c files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Certreqresp">
+            <summary>p7r files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Signature">
+            <summary>p7s files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationPdf">
+            <summary>Portable Document Format, PDF has been in use for document exchange on the Internet since 1993; Defined in RFC 3778</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ImagePng">
+            <summary>Portable Network Graphics; Registered,[8] Defined in RFC 2083</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationPostscript">
+            <summary>PostScript; Defined in RFC 2046</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.VideoQuicktime">
+            <summary>QuickTime video; Registered[10]</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXRarCompressed">
+            <summary>RAR archive files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioVndRnRealaudio">
+            <summary>RealAudio; Documented in RealPlayer Customer Support Answer 2559</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationRdfXml">
+            <summary>Resource Description Framework; Defined by RFC 3870</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationRssXml">
+            <summary>RSS feeds</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationSoapXml">
+            <summary>SOAP; Defined by RFC 3902</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXStuffit">
+            <summary>StuffIt archive files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ImageSvgXml">
+            <summary>SVG vector image; Defined in SVG Tiny 1.2 Specification Appendix M</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ImageTiff">
+            <summary>Tag Image File Format (only for Baseline TIFF); Defined in RFC 3302</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXTar">
+            <summary>Tarball files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.TextPlain">
+            <summary>Textual data; Defined in RFC 2046 and RFC 3676</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXFontTtf">
+            <summary>TrueType Font No registered MIME type, but this is the most commonly used</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.TextVcard">
+            <summary>vCard (contact information); Defined in RFC 6350</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioVorbis">
+            <summary>Vorbis encoded audio; Defined in RFC 5215</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioVndWave">
+            <summary>WAV audio; Defined in RFC 2361</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationFontWoff">
+            <summary>Web Open Font Format; (candidate recommendation; use application/x-font-woff until standard is official)</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.VideoWebm">
+            <summary>WebM Matroska-based open media format</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioWebm">
+            <summary>WebM open media format</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioXMsWax">
+            <summary>Windows Media Audio Redirector; Documented in Microsoft help page</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.AudioXMsWma">
+            <summary>Windows Media Audio; Documented in Microsoft KB 288102</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.VideoXMsWmv">
+            <summary>Windows Media Video; Documented in Microsoft KB 288102</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ModelVrml">
+            <summary>WRL files, VRML files; Defined in RFC 2077</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ModelX3DXml">
+            <summary>X3D ISO standard for representing 3D computer graphics, X3D XML files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ModelX3DBinary">
+            <summary>X3D ISO standard for representing 3D computer graphics, X3DB binary files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ModelX3DVrml">
+            <summary>X3D ISO standard for representing 3D computer graphics, X3DV VRML files</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationXhtmlXml">
+            <summary>XHTML; Defined by RFC 3236</summary>
+        </member>
+        <member name="F:ABP.WebApi.Net.MimeTypes.MimeTypeNames.ApplicationZip">
+            <summary>ZIP archive files; Registered[7]</summary>
+        </member>
+        <member name="M:ABP.WebApi.ReflectionHelper.IsAssignableToGenericType(System.Type,System.Type)">
+            <summary>
+            Checks whether <paramref name="givenType"/> implements/inherits <paramref name="genericType"/>.
+            </summary>
+            <param name="givenType">Type to check</param>
+            <param name="genericType">Generic type</param>
+        </member>
+        <member name="M:ABP.WebApi.ReflectionHelper.GetAttributesOfMemberAndDeclaringType(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+            Gets a list of attributes defined for a class member and it's declaring type including inherited attributes.
+            </summary>
+            <param name="inherit">Inherit attribute from base classes</param>
+            <param name="memberInfo">MemberInfo</param>
+        </member>
+        <member name="M:ABP.WebApi.ReflectionHelper.GetAttributesOfMemberAndType(System.Reflection.MemberInfo,System.Type,System.Boolean)">
+            <summary>
+            Gets a list of attributes defined for a class member and type including inherited attributes.
+            </summary>
+            <param name="memberInfo">MemberInfo</param>
+            <param name="type">Type</param>
+            <param name="inherit">Inherit attribute from base classes</param>
+        </member>
+        <member name="M:ABP.WebApi.ReflectionHelper.GetAttributesOfMemberAndDeclaringType``1(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+            Gets a list of attributes defined for a class member and it's declaring type including inherited attributes.
+            </summary>
+            <typeparam name="TAttribute">Type of the attribute</typeparam>
+            <param name="memberInfo">MemberInfo</param>
+            <param name="inherit">Inherit attribute from base classes</param>
+        </member>
+        <member name="M:ABP.WebApi.ReflectionHelper.GetAttributesOfMemberAndType``1(System.Reflection.MemberInfo,System.Type,System.Boolean)">
+            <summary>
+            Gets a list of attributes defined for a class member and type including inherited attributes.
+            </summary>
+            <typeparam name="TAttribute">Type of the attribute</typeparam>
+            <param name="memberInfo">MemberInfo</param>
+            <param name="type">Type</param>
+            <param name="inherit">Inherit attribute from base classes</param>
+        </member>
+        <member name="M:ABP.WebApi.ReflectionHelper.GetSingleAttributeOfMemberOrDeclaringTypeOrDefault``1(System.Reflection.MemberInfo,``0,System.Boolean)">
+            <summary>
+            Tries to gets an of attribute defined for a class member and it's declaring type including inherited attributes.
+            Returns default value if it's not declared at all.
+            </summary>
+            <typeparam name="TAttribute">Type of the attribute</typeparam>
+            <param name="memberInfo">MemberInfo</param>
+            <param name="defaultValue">Default value (null as default)</param>
+            <param name="inherit">Inherit attribute from base classes</param>
+        </member>
+        <member name="M:ABP.WebApi.ReflectionHelper.GetSingleAttributeOrDefault``1(System.Reflection.MemberInfo,``0,System.Boolean)">
+            <summary>
+            Tries to gets an of attribute defined for a class member and it's declaring type including inherited attributes.
+            Returns default value if it's not declared at all.
+            </summary>
+            <typeparam name="TAttribute">Type of the attribute</typeparam>
+            <param name="memberInfo">MemberInfo</param>
+            <param name="defaultValue">Default value (null as default)</param>
+            <param name="inherit">Inherit attribute from base classes</param>
+        </member>
+        <member name="M:ABP.WebApi.ReflectionHelper.GetPropertyByPath(System.Object,System.Type,System.String)">
+            <summary>
+            Gets a property by it's full path from given object
+            </summary>
+            <param name="obj">Object to get value from</param>
+            <param name="objectType">Type of given object</param>
+            <param name="propertyPath">Full path of property</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.ReflectionHelper.GetValueByPath(System.Object,System.Type,System.String)">
+            <summary>
+            Gets value of a property by it's full path from given object
+            </summary>
+            <param name="obj">Object to get value from</param>
+            <param name="objectType">Type of given object</param>
+            <param name="propertyPath">Full path of property</param>
+            <returns></returns>
+        </member>
+        <member name="M:ABP.WebApi.ReflectionHelper.SetValueByPath(System.Object,System.Type,System.String,System.Object)">
+            <summary>
+            Sets value of a property by it's full path on given object
+            </summary>
+            <param name="obj"></param>
+            <param name="objectType"></param>
+            <param name="propertyPath"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:ABP.WebApi.WebApiAppServiceBase">
+            <summary>
+            Derive your application services from this class.
+            </summary>
+        </member>
+        <member name="T:ABP.WebApi.WebapiAuditStore">
+            <summary>
+            可以处理审计日志,比如更改存储方式
+            </summary>
+        </member>
+    </members>
+</doc>
